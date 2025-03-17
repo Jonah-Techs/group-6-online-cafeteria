@@ -1,0 +1,25 @@
+<h2>Menu</h2>
+<form method="POST">
+    <label>
+        <input type="checkbox" name="order" value="Burger - $5">
+        Burger - $5
+    </label><br>
+    <label>
+        <input type="checkbox" name="order" value="Pizza - $8">
+        Pizza - $8
+    </label><br>
+    <label>
+        <input type="checkbox" name="order" value="Soda - $2">
+        Soda - $2
+    </label><br><br>
+
+    <!-- New Fields for Customer Details -->
+    <label for="customer_name">Your Name:</label><br>
+    <input type="text" id="customer_name" name="customer_name" required><br><br>
+
+    <label for="location">Your Location (e.g., Table Number or Room):</label><br>
+    <input type="text" id="location" name="location" required><br><br>
+
+    <input type="hidden" name="total_price" value="15"> <!-- Later, we'll calculate this dynamically -->
+    <button type="submit">Place Order</button>
+</form>

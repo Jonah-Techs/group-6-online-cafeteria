@@ -1,0 +1,66 @@
+<!DOCTYPE html> <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cafeteria Menu</title>
+ 
+</head>
+<body>
+  <h1>UNIVERSITY CAFETERIA</h1>
+  
+  <form method="POST">
+    <h2>Select Your Items:</h2>
+    <div>
+    <label>
+      <h3>BREAK FIRST</h3>
+      <input type="checkbox" name="order" value="black tea"> black tea - shs.1000
+    </label><br>
+    <label>
+      <input type="checkbox" name="order" value="milk"> milk - shs.1500
+    </label><br>
+    <label>
+      <input type="checkbox" name="order" value="coffee"> coffee - shs.10000
+    </label><br>
+    <label>
+      <input type="checkbox" name="order" value="embori">  - shs.20000
+    </label><br>
+    <label>
+      <input type="checkbox" name="order" value="envuruga"> envuruga - shs.9000
+    </label><br><br>
+  </div>
+  <div>
+    <h3>SODAs</h3>
+      <label>
+        <input type="checkbox" name="order" value="cococola"> cococola - Shs.1500
+      </label><br>
+      <label>
+        <input type="checkbox" name="order" value="mirinda"> mirinda - shs.1500
+      </label><br>
+        <label>
+            <input type="checkbox" name="order" value="fanta"> fanta - shs.1500
+        </label><br>
+        <label>
+          <input type="checkbox" name="order" value="stoney"> stoney - shs.1500
+        </label><br>
+        <label>
+          <input type="checkbox" name="order" value="novida"> novida - shs.1500
+        </label><br>
+
+
+
+      <br><br>
+
+
+
+    <!-- Fields to capture customer details -->
+    <label for="customer_name">Your Name:</label><br>
+    <input type="text" id="customer_name" name="customer_name" required><br><br>
+
+    <label for="location">Your Location (Table/Room):</label><br>
+    <input type="text" id="location" name="location" required><br><br>
+
+    <!-- Remove the fixed total_price hidden field -->
+    <button type="submit">Place Order</button>
+  </form>
+</body>
+</html>

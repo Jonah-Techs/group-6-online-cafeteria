@@ -1,0 +1,12 @@
+cafeteria-ordering-system/
+│
+├── app.py
+├── requirements.txt
+├── templates/
+│   ├── index.html
+│   └── confirmation.html
+└── static/
+    ├── css/
+    │   └── style.css
+    └── js/
+        └── main.js   # (if needed for additional interactivity)

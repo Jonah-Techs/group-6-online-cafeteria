@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>Admin Dashboard - All Orders</h1>
+  {% if orders %}
+    <ul>
+      {% for order in orders %}
+        <li>
+          <strong>Name:</strong> {{ order.customer_name }}<br>
+          <strong>Location:</strong> {{ order.location }}<br>
+          <strong>Order (placed at {{ order.timestamp }}):</strong>
+          <ul>
+            {% for item in order.order %}
+              <li>{{ item.name }} - ${{ item.price }}</li>
+            {% endfor %}
+          </ul>
+          <strong>Total Price:</strong> ${{ order.total_price }}<br>
+          <hr>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No orders yet!</p>
+  {% endif %}
+  <!-- Print Button -->
+  <button onclick="window.print()">Print Orders</button>
+  <br><br>
+  <a href="/">Back to Menu</a>
+</body>
+</html>

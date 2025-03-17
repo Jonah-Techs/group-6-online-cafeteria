@@ -1,0 +1,11 @@
+<h2>Order Confirmation</h2>
+<p>Thank you for your order! Here are the details:</p>
+<ul>
+    {% for item in order %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+
+<p>Total Price: ${{ total_price }}</p>
+
+<a href="/">Order Again</a>

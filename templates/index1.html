@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>University Cafeteria Menu</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <h1>University Cafeteria Menu</h1>
+  <form action="{{ url_for('order') }}" method="post">
+    {% for item in menu_items %}
+      <div class="menu-item">
+        <input type="checkbox" name="item" value="{{ item.id }}"> 
+        <strong>{{ item.name }}</strong> - {{ item.description }} : ${{ item.price }}
+      </div>
+    {% endfor %}
+    <button type="submit">Place Order</button>
+  </form>
+</body>
+</html>
