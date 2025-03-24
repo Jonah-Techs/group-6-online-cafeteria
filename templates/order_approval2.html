@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Review Order</title>
+</head>
+<body>
+    <h1>Review Your Order</h1>
+    <h2>{{ customer_name }}</h2>
+    <p>Delivering to: {{ location }}</p>
+    
+    <h3>Your Items:</h3>
+    <ul>
+        {% for item in order %}
+        <li>{{ item.name }} - shs.{{ item.price }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Total: shs.{{ total_price }}</h3>
+    
+    <form action="{{ url_for('submit_order') }}" method="post">
+        <button type="button" onclick="history.back()">Edit Order</button>
+        <button type="submit">Confirm Order</button>
+    </form>
+</body>
+</html>

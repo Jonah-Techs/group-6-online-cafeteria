@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Print Order - Order #{{ order['order_id'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* Print-specific styling */
+        @media print {
+            .no-print { display: none; }
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            window.print();
+        };
+    </script>
+</head>
+<body>
+  <div class="menu-container">
+    <h1>Order #{{ order['order_id'] }} - Print View</h1>
+    <p><strong>Customer:</strong> {{ order['customer_name'] }}</p>
+    <p><strong>Location:</strong> {{ order['location'] }}</p>
+    <p><strong>Time:</strong> {{ order['timestamp'] }}</p>
+    
+    <h2>Order Details:</h2>
+    <ul>
+        {% for item in order['items'] %}
+            <li>{{ item.name }} - shs.{{ item.price }}</li>
+        {% endfor %}
+    </ul>
+    
+    <p><strong>Total Price:</strong> shs.{{ order['total_price'] }}</p>
+    
+    <button class="no-print" onclick="window.location.href='{{ url_for('admin_dashboard') }}'">Back to Dashboard</button>
+  </div>
+</body>
+</html>

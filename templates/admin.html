@@ -2,41 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>Admin Login</title>
 </head>
 <body>
-  <h1>Admin Dashboard - All Orders</h1>
-  {% if orders %}
-    <ul>
-      {% for order in orders %}
-        <li>
-          <strong>Order ID:</strong> {{ order.order_id }}<br>
-          <strong>Name:</strong> {{ order.customer_name }}<br>
-          <strong>Location:</strong> {{ order.location }}<br>
-          <strong>Order (placed at {{ order.timestamp }}):</strong>
-          <ul>
-            {% for item in order.order %}
-              <li>{{ item.name }} - shs.{{ item.price }}</li>
-            {% endfor %}
-          </ul>
-          <strong>Total Price:</strong> shs.{{ order.total_price }}<br>
-          <strong>Status:</strong> {{ order.status }}<br>
-          {% if order.status == 'Pending' %}
-            <a href="/update_status/{{ order.order_id }}/Completed">Mark Completed</a>
-          {% else %}
-            <a href="/update_status/{{ order.order_id }}/Pending">Mark Pending</a>
-          {% endif %}
-          <hr>
-        </li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>No orders yet!</p>
-  {% endif %}
-  <!-- Print Button -->
-  <button onclick="window.print()">Print Orders</button>
-  <br><br>
-  <a href="/">Back to Menu</a>
+  <h1>Admin Login</h1>
+  <form action="{{ url_for('admin') }}" method="post">
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Login</button>
+  </form>
 </body>
 </html>

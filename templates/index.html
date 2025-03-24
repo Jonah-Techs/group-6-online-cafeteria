@@ -1,163 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Food Menu Template</title>
-  <!-- Link to external CSS -->
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <form method="POST">
-  <div class="menu-container">
-    
-    <!-- Header Section -->
-    <header class="menu-header">
-      <h1>FOOD MENU</h1>
-      <h2>GROUP 6 CAFETERIA</h2>
-    </header>
-    
-    <!-- Main Course Section -->
-    <section class="menu-section">
-      <div class="section-header">
-        <div class="section-title">
-          <h3>MAIN COURSE</h3>
-        </div>
+  <form action="{{ url_for('order_approval') }}" method="post">
+    <div class="menu-container">
+      <!-- Header Section -->
+      <header class="menu-header">
+        <h1>FOOD MENU</h1>
+        <h2>GROUP 6 CAFETERIA</h2>
+      </header>
       
-        <div class="section-image">
-          <img src="{{url_for('static', filename='pictures/main course.jpeg')}}" alt="Main Course" />
+      <!-- Main Course Section -->
+      <section class="menu-section">
+        <div class="section-header">
+          <div class="section-title">
+            <h3>MAIN COURSE</h3>
+          </div>
+          <div class="section-image">
+            <img src="{{ url_for('static', filename='pictures/main course.jpeg') }}" alt="Main Course">
+          </div>
         </div>
-      </div>
-      <label class="menu-list">
-        <input type="checkbox" name="order" value="cheeseburger">
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="cheeseburger">
           <span class="item-name">Cheeseburger</span>
-          <span class="item-price">  -Shs.15000</span>
-      </label><br>
-        
+          <span class="item-price"> - Shs.15000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="cheese_sandwich">
+          <span class="item-name">Cheese Sandwich</span>
+          <span class="item-price"> - Shs.18000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="chicken_burgers">
+          <span class="item-name">Chicken Burgers</span>
+          <span class="item-price"> - Shs.25000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="spicy_chicken">
+          <span class="item-name">Spicy Chicken</span>
+          <span class="item-price"> - Shs.22000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="hot_dog">
+          <span class="item-name">Hot Dog</span>
+          <span class="item-price"> - Shs.10000</span>
+        </label><br>
+      </section>
       
-      <label class="menu-list">
-        <input type="checkbox" name="order" value="cheese Sandwich">
-          <span class="item-name">cheese Sandwich</span>
-          <span class="item-price">  -Shs.18000</span>
-      </label><br>
-        
-      <label class="menu-list">
-        <input type="checkbox" name="order" value="chicken burgers">
-          <span class="item-name">chicken burgers</span>
-          <span class="item-price">  -Shs.25000</span>
-      </label><br>
-
-      <label class="menu-list">
-        <input type="checkbox" name="order" value="spicy chicken">
-          <span class="item-name">spicy chicken</span>
-          <span class="item-price">  -Shs.22000</span>
-      </label><br>
-
-        <label class="menu-list">
-        <input type="checkbox" name="order" value="hot dog">
-          <span class="item-name">hot dog</span>
-          <span class="item-price">  -Shs.10000</span>
-        </label><br>
-    </section>
-
-    <!-- Appetizers Section -->
-    <section class="menu-section">
-      <div class="section-header">
-        <div class="section-title">
-          <h3>APPETIZERS</h3>
+      <!-- Appetizers Section -->
+      <section class="menu-section">
+        <div class="section-header">
+          <div class="section-title">
+            <h3>APPETIZERS</h3>
+          </div>
+          <div class="section-image">
+            <img src="{{ url_for('static', filename='pictures/appetizers.jpeg') }}" alt="Appetizers">
+          </div>
         </div>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="fruit_salad">
+          <span class="item-name">Fruit Salad</span>
+          <span class="item-price"> - Shs.8000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="cocktails">
+          <span class="item-name">Cocktails</span>
+          <span class="item-price"> - Shs.18000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="nuggets">
+          <span class="item-name">Nuggets</span>
+          <span class="item-price"> - Shs.9000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="sandwich">
+          <span class="item-name">Sandwich</span>
+          <span class="item-price"> - Shs.16000</span>
+        </label><br>
+        <label class="menu-list">
+          <input type="checkbox" name="order" value="french_fries">
+          <span class="item-name">French Fries</span>
+          <span class="item-price"> - Shs.7000</span>
+        </label><br>
+      </section>
       
-        <div class="section-image">
-          <img src="{{url_for('static', filename='pictures/appetizers.jpeg')}}" alt="Appetizers" />
+      <!-- Beverages Section -->
+      <section class="menu-section">
+        <div class="section-header">
+          <div class="section-title">
+            <h3>BEVERAGES</h3>
+          </div>
+          <div class="section-image">
+            <img src="{{ url_for('static', filename='pictures/breverages.jpeg') }}" alt="Beverages">
+          </div>
         </div>
-      </div>
-    
         <label class="menu-list">
-            <input type="checkbox" name="order" value="fruit salad">
-              <span class="item-name">fruit salad</span>
-              <span class="item-price">  -Shs.8000</span>
-        </label><br>
-    
-        <label class="menu-list">
-            <input type="checkbox" name="order" value="Cocktails">
-              <span class="item-name">Cocktails</span>
-              <span class="item-price">  -Shs.18000</span>
-        </label><br>
-
-        <label class="menu-list">
-            <input type="checkbox" name="order" value="Nuggets">
-              <span class="item-name">Nuggets</span>
-              <span class="item-price">  -Shs.9000</span>
-        </label><br>
-
-        <label class="menu-list">
-            <input type="checkbox" name="order" value="Sandwich">
-              <span class="item-name">Sandwich</span>
-              <span class="item-price">  -Shs.16000</span>
-        </label><br>
-
-        <label class="menu-list">
-            <input type="checkbox" name="order" value="French Fries">
-              <span class="item-name">French Fries</span>
-              <span class="item-price">  -Shs.7000</span>
-        </label><br>
-      
-    </section>
-
-    <!-- Beverages Section -->
-    <section class="menu-section">
-      <div class="section-header">
-        <div class="section-title">
-          <h3>BEVERAGES</h3>
-        </div>
-        <!-- Example image (replace with your own) -->
-        <div class="section-image">
-          <img src="{{url_for('static',filename='pictures/breverages.jpeg')}}" alt="Beverages" />
-        </div>
-      </div>
-      <label class="menu-list">
-        <input type="checkbox" name="order" value="Milk Shake">
+          <input type="checkbox" name="order" value="milk_shake">
           <span class="item-name">Milk Shake</span>
-          <span class="item-price">  -Shs.3000</span>
-    </label><br>
-
+          <span class="item-price"> - Shs.3000</span>
+        </label><br>
         <label class="menu-list">
-        <input type="checkbox" name="order" value="Iced Tea">
+          <input type="checkbox" name="order" value="iced_tea">
           <span class="item-name">Iced Tea</span>
-          <span class="item-price">  -Shs.2000</span>
-    </label><br>
-
+          <span class="item-price"> - Shs.2000</span>
+        </label><br>
         <label class="menu-list">
-        <input type="checkbox" name="order" value="Orange Juice">
+          <input type="checkbox" name="order" value="orange_juice">
           <span class="item-name">Orange Juice</span>
-          <span class="item-price">  -Shs.2500</span>
-    </label><br>
-
+          <span class="item-price"> - Shs.2500</span>
+        </label><br>
         <label class="menu-list">
-        <input type="checkbox" name="order" value="Lemon Tea">
+          <input type="checkbox" name="order" value="lemon_tea">
           <span class="item-name">Lemon Tea</span>
-          <span class="item-price">  -Shs.1500</span>
-    </label><br>
-      </ul>
-    </section>
+          <span class="item-price"> - Shs.1500</span>
+        </label><br>
+      </section>
+      
+      <!-- Customer Details -->
+      <section class="menu-section">
+        <label for="customer_name">Your Name:</label><br>
+        <input type="text" id="customer_name" name="customer_name" required><br><br>
 
-    <!-- Fields to capture customer details -->
-    <label for="customer_name">Your Name:</label><br>
-    <input type="text" id="customer_name" name="customer_name" required><br><br>
-
-    <label for="location">Your Location (Table/Room):</label><br>
-    <input type="text" id="location" name="location" required><br><br>
-
-    
-    <button type="submit">Place Order</button>
-
-    <!-- Footer Section -->
-    <footer class="menu-footer">
-      <div class="footer-content">
-        <p><strong>Phone:</strong> 0760062369 <br>-for mobile money. and put your name as the reason</p>
-        <p><strong>Address:</strong>  Besides New building, KIU</p>
-      </div>
-    </footer>
-  </div>
-</form>
+        <label for="location">Your Location (Table/Room):</label><br>
+        <input type="text" id="location" name="location" required><br><br>
+      </section>
+      
+      <!-- Submit Buttons -->
+      <section class="menu-section">
+        <button type="submit" name="submit">Submit Order</button>
+        <button type="reset">Clear Order</button>
+      </section>
+      
+      <!-- Footer Section -->
+      <footer class="menu-footer">
+        <div class="footer-content">
+          <p><strong>Phone:</strong> 0760062369 - for mobile money (use your name as the reason)</p>
+          <p><strong>Address:</strong> Besides New building, KIU</p>
+        </div>
+      </footer>
+    </div>
+  </form>
 </body>
 </html>

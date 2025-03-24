@@ -1,12 +1,17 @@
 cafeteria-ordering-system/
-│
 ├── app.py
-├── requirements.txt
+├── orders.json   (optional; will be created automatically)
 ├── templates/
 │   ├── index.html
-│   └── confirmation.html
+│   ├── order_approval.html
+│   ├── confirmation.html
+│   ├── admin_login.html
+│   ├── admin_dashboard.html
+│   └── print_order.html
 └── static/
-    ├── css/
-    │   └── style.css
-    └── js/
-        └── main.js   # (if needed for additional interactivity)
+    └── css/
+         └── style.css
+    └── pictures/
+         ├── main course.jpeg
+         ├── appetizers.jpeg
+         └── breverages.jpeg

@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Order Confirmation</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Order Confirmation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <h1>Order Confirmation</h1>
-  <p>Thank you, {{ customer_name }}! Your order has been placed.</p>
-  <p><strong>Location:</strong> {{ location }}</p>
-  <h2>Order Details:</h2>
-  <ul>
-    {% for item in order %}
-      <li>{{ item.name }} - shs.{{ item.price }}</li>
-    {% endfor %}
-  </ul>
-  <p><strong>Total Price:</strong> shs.{{ total_price }}</p>
-  <a href="/">Place Another Order</a>
-  
+  <div class="menu-container">
+    <h1>Order Confirmed!</h1>
+    <p>Thank you, {{ order['name'] }}!</p>
+    
+    <h3>Delivery to: {{ order['location'] }}</h3>
+    
+    <h2>Your Order:</h2>
+    <ul>
+        {% for item in order['items'] %}
+        <li>{{ item.name }} - shs.{{ item.price }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Total: shs.{{ order['total_price'] }}</h3>
+    
+    <a href="{{ url_for('index') }}">Order Again</a>
+  </div>
 </body>
 </html>

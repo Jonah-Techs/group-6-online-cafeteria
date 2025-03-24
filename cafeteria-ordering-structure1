@@ -1,0 +1,14 @@
+cafeteria-ordering-system/
+│
+├── app.py
+├── orders.json
+├── templates/
+│   ├── index.html
+│   ├── order_approval.html
+│   ├── confirmation.html
+│   ├── admin_login.html
+│   ├── admin_dashboard.html
+│
+└── static/
+    └── css/
+        └── style.css

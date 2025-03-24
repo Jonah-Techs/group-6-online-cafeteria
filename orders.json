@@ -1,24 +1,46 @@
 [
     {
         "order_id": 1,
-        "customer_name": "fad",
-        "location": "lib",
-        "order": [
+        "customer_name": "sdf",
+        "location": "fety",
+        "items": [
+            {
+                "name": "Cheeseburger",
+                "price": 15000
+            },
+            {
+                "name": "Chicken Burgers",
+                "price": 25000
+            },
+            {
+                "name": "Hot Dog",
+                "price": 10000
+            }
+        ],
+        "total_price": 50000,
+        "status": "Completed",
+        "timestamp": "2025-03-24 10:32:21"
+    },
+    {
+        "order_id": 2,
+        "customer_name": "fds",
+        "location": "hj",
+        "items": [
             {
                 "name": "Hot Dog",
                 "price": 10000
             },
             {
-                "name": "Nuggets",
-                "price": 9000
+                "name": "Cocktails",
+                "price": 18000
             },
             {
-                "name": "Iced Tea",
-                "price": 2000
+                "name": "Milk Shake",
+                "price": 3000
             }
         ],
-        "total_price": 21000,
-        "timestamp": "2025-03-17 16:26:53",
-        "status": "Pending"
+        "total_price": 31000,
+        "status": "Pending",
+        "timestamp": "2025-03-24 10:59:24"
     }
 ]

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+</head>
+<body>
+    <h1>Order Confirmation</h1>
+    <p>Thank you, {{ order['name'] }}! Your order has been placed successfully.</p>
+
+    <strong>Location:</strong> {{ order['location'] }}
+
+    <h2>Order Details:</h2>
+    <ul>
+        {% for item in order['items'] %}
+            <li>{{ item['name'] }} - shs.{{ item['price'] }}</li>
+        {% endfor %}
+    </ul>
+
+    <strong>Total Price:</strong> shs.{{ order['total_price'] }}
+
+    <a href="{{ url_for('index') }}">Place Another Order</a>
+</body>
+</html>

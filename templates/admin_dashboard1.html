@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>All Orders</h1>
+    <a href="{{ url_for('admin_logout') }}">Logout</a>
+
+    {% for order in orders %}
+    <div class="order">
+        <h3>Order #{{ order.order_id }}</h3>
+        <p>Customer: {{ order.customer_name }}</p>
+        <p>Location: {{ order.location }}</p>
+        <p>Status: {{ order.status }}</p>
+        <p>Time: {{ order.timestamp }}</p>
+        
+        <h4>Items:</h4>
+        <ul>
+          {% for item in order['items'] %}
+            <li>{{ item.name }} - shs.{{ item.price }}</li>
+          {% endfor %}
+      
+        </ul>
+        
+        <p>Total: shs.{{ order.total_price }}</p>
+        
+        {% if order.status == 'Pending' %}
+            <a href="{{ url_for('update_status', order_id=order.order_id, new_status='Completed') }}">
+                Mark Completed
+            </a>
+        {% else %}
+            <a href="{{ url_for('update_status', order_id=order.order_id, new_status='Pending') }}">
+                Mark Pending
+            </a>
+        {% endif %}
+    </div>
+    <hr>
+    {% endfor %}
+</body>
+</html>

@@ -1,115 +1,109 @@
-
 /* Basic resets */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  /* Body styling */
-  body {
-    background-color: #2d2d2d; /* Dark background */
+}
+
+/* Body styling */
+body {
+    background-color: #2d2d2d;
     font-family: Arial, sans-serif;
     color: #ffffff;
-  }
-  
-  /* Container */
-  .menu-container {
+}
+
+/* Container */
+.menu-container {
     width: 90%;
     max-width: 700px;
     margin: 0 auto;
     padding: 20px;
-  }
-  
-  /* Header */
-  .menu-header {
+}
+
+/* Header */
+.menu-header {
     text-align: center;
     margin-bottom: 30px;
-  }
-  
-  .menu-header h1 {
+}
+
+.menu-header h1 {
     font-size: 3rem;
-    color: #f7931e; /* Vibrant orange color */
+    color: #f7931e;
     letter-spacing: 2px;
-  }
-  
-  .menu-header h2 {
+}
+
+.menu-header h2 {
     font-size: 1.3rem;
     font-weight: 400;
     margin-top: 10px;
     color: #ffffff;
-  }
-  
-  /* Section common styling */
-  .menu-section {
+}
+
+/* Section common styling */
+.menu-section {
     margin-bottom: 40px;
-  }
-  
-  .section-header {
+}
+
+.section-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 15px;
-  }
-  
-  /* Section title */
-  .section-title h3 {
+}
+
+/* Section title */
+.section-title h3 {
     background-color: #f7931e;
     color: #2d2d2d;
     padding: 10px 20px;
-    border-radius: 30px; /* Creates a pill-shaped background */
+    border-radius: 30px;
     text-transform: uppercase;
     font-size: 1.5rem;
     letter-spacing: 1px;
-  }
-  
-  /* Section image (circular) */
-  .section-image img {
+}
+
+/* Section image (circular) */
+.section-image img {
     width: 150px;
     height: 150px;
     border-radius: 40%;
     object-fit: cover;
-    margin: 10 0px;
+    margin: 10px 0;
     margin-top: 40px;
-  }
-  .section-image img {
+}
+.section-image img {
     border: 10px solid #f7931e;
-  }
+}
 
-  
-  /* Menu list */
-  .menu-list {
+/* Menu list */
+.menu-list {
     list-style: none;
     margin-top: 10px;
-  }
-  
-  .menu-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px 0;
-    border-bottom: 1px solid #444;
-    font-size: 1.1rem;
-  }
-  
-  .menu-list li .item-name {
+    display: block;
+}
+
+.menu-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.menu-list .item-name {
     font-weight: 500;
-  }
-  
-  .menu-list li .item-price {
+}
+
+.menu-list .item-price {
     color: #f7931e;
     font-weight: 600;
-  }
-  
-  /* Footer */
-  .menu-footer {
+}
+
+/* Footer */
+.menu-footer {
     text-align: center;
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #444;
-  }
-  
-  .menu-footer .footer-content p {
+}
+
+.menu-footer .footer-content p {
     margin: 5px 0;
     font-size: 1rem;
-  }
-  
+}

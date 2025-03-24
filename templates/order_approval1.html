@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order Approval</title>
+</head>
+<body>
+    <h1>Order Approval</h1>
+    <p>Hei {{ customer_name }}: This is the order you have placed.</p>
+    <p><strong>Location:</strong> {{ location }}</p>
+
+    <h2>Order Details:</h2>
+    <ul>
+        {% for item in order %}
+            <li>{{ item.name }} - shs.{{ item.price }}</li>
+        {% endfor %}
+    </ul>
+    <p><strong>Total Price:</strong> shs.{{ total_price }}</p>
+
+    <!-- Form to submit the final order -->
+    <form action="{{ url_for('submit_order') }}" method="post">
+        {% for item_key in selected_items %}
+            <input type="hidden" name="order" value="{{ item_key }}">
+        {% endfor %}
+        <input type="hidden" name="customer_name" value="{{ customer_name }}">
+        <input type="hidden" name="location" value="{{ location }}">
+
+        <!-- Edit Order Button (go back to index.html) -->
+        <button type="button" onclick="window.history.back();">Edit Order</button>
+
+        <!-- Submit Order Button -->
+        <button type="submit">Submit Order</button>
+    </form>
+</body>
+</html>
